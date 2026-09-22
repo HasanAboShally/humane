@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "source": "site/artwork.mjs",
+    "origin": "Original parametric open-band linework. Relative SVG commands preserve all 6,510 original plotted vertices with smaller markup. The website restores its original 1.3-second subtle rotation/fade entrance, followed by a still illustration, with a reduced-motion fallback. No external image or photograph.",
+    "reason": "The optical-band structure connects many strands into a readable whole without inventing product data or a fake app screenshot."
+  },
+  "social": {
+    "source": "scripts/build-site.mjs",
+    "origin": "Original static composition using the hero geometry and actual Manrope glyph outlines, rasterized with Sharp. Provenance is embedded as XMP in the output PNG."
+  },
+  "type": [
+    { "family": "Manrope", "package": "@fontsource-variable/manrope", "license": "SIL Open Font License", "hosting": "Self-hosted Latin variable subset" }
+  ],
+  "icons": { "package": "lucide-static", "license": "ISC", "selection": "Build-time extraction; no icon runtime or third-party CDN request" },
+  "figma": "The official Figma resource index and design guidance were checked through a read-only delegate. Library search needed a file key that was not supplied. No Figma file, upload, or guessed library asset was used.",
+  "imageGeneration": "No image-generation key was configured. The selected direction is exact geometric media, not a simulated photograph; no placeholder imagery is shipped."
+}

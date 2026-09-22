@@ -1,0 +1,111 @@
+{
+  "date": "2026-09-17",
+  "skillSha256": "5f518ad5dd5d42e04d8e5d56f625b7a659ef002dc44023289f9f21adb46868e3",
+  "method": "Twenty-four separate default-assistant subagent invocations of the revised canonical skill, one request per invocation. The assistants received the workflow and the applicable fictional inputs, not the acceptance checklist or authored output. The implementing assistant inspected the captured responses against tests/cases.json. Prompt whitespace was normalized in one reimbursement trial; its facts and word limit were unchanged.",
+  "modelIdentifier": "Not surfaced by the subagent interface; no cross-model validation claim.",
+  "limits": [
+    "One response per case is not repeatability, a controlled benchmark, human comprehension testing, or a perfection guarantee.",
+    "Read-only and no-action limits were also supplied in the trial prompts, so action safety cannot be attributed to the skill alone.",
+    "Missing attachments, extraction gaps, and context limits were simulated as supplied text; real document parsing was not tested.",
+    "The same assistant family generated and evaluated responses; acceptance review was not blinded or independent human scoring.",
+    "Historical responses in smoke-results.json describe the previous skill fingerprint and were retained unchanged."
+  ],
+  "cases": [
+    {
+      "id": "general-explanation",
+      "output": "A password manager is an app that saves your passwords and fills them in when you sign in. It can also make a different, hard-to-guess password for each account, so you don’t have to remember them all."
+    },
+    {
+      "id": "exact-two-bullets",
+      "output": "- Not confirmed: 4 November is provisional pending venue approval. Both supplied excerpts reviewed: organiser email and logistics note.\n- Bring a charged laptop; no software purchase is required (organiser email). Adapters will be supplied; do not buy them (logistics note)."
+    },
+    {
+      "id": "personal-closure",
+      "output": "I really appreciate your illustrations and have enjoyed working with you. After our current project finishes on 12 October, I won’t be commissioning any further work from you. I want to be clear that this isn’t a pause.\n\nThe work and payment we’ve agreed for this project will stay the same. Thank you for the work we’ve done together."
+    },
+    {
+      "id": "missing-charter-reference",
+      "output": "**Only as the memo’s claim—not as an established fact.**\n\nSuggested wording:\n> The Audit memo describes the review as independent under the definition in Review Charter section 4. This cannot be verified from the supplied material: the charter is not attached, and the memo does not explain the decision-making roles of two panel members who report to the programme director.\n\nThose reporting lines do not, by themselves, prove a lack of independence. Before using “independent” without qualification, obtain section 4 and clarify those members’ roles."
+    },
+    {
+      "id": "ambiguous-final-notices",
+      "output": "The two supplied notices differ, but **a policy change is not established**:\n\n- **Notice A:** Participants must give **14 days’ notice** to withdraw.\n- **Notice B:** Participants must give **28 days’ notice** to withdraw.\n\nBoth are labelled **FINAL** and dated **16 September 2026**. Neither is identified as replacing the other, and it is unclear whether they cover the same participants or circumstances. **Which requirement applies remains unresolved**—this is not a confirmed increase from 14 to 28 days."
+    },
+    {
+      "id": "source-only-cause",
+      "output": "The cause cannot be determined from this report. It records 40 seedlings in April and 26 in May, but contains no observations about weather, watering, pests, or changes to counting. [Source Report]"
+    },
+    {
+      "id": "one-sentence-invitation",
+      "output": "Hi Lina, would you like to join me for tea at my place on Saturday at 4pm?"
+    },
+    {
+      "id": "audience-privacy",
+      "output": "Saturday’s orientation is moving from Room 3 to Room 8. We’ll still start at 10:00, and existing registrations remain valid. Room 8 has a step-free entrance."
+    },
+    {
+      "id": "cross-document-conflict",
+      "output": "**The pilot’s budget is unresolved, its venue is unconfirmed, and no volunteers are formally enrolled.** Three things need attention:\n\n- **Budget:** The plan estimates **$8,000**; finance estimates **$10,000** for the same two-week, 20-volunteer pilot. Both exclude tax, include training, and exclude the venue deposit, whose amount is unknown. Finance does not establish that its estimate replaces the plan’s. The supplier quote is pending; finance requires the final quote before budget approval. **Suggested check:** reconcile the estimates and establish the deposit cost. ([Plan—Budget](projects/humane/examples/receiver/plan.md#L9-L11); [Finance—Estimate and approval constraint](projects/humane/examples/receiver/finance.md#L5-L11))\n\n- **Schedule and response:** An answer is requested by **17 September 2026** to reserve training time—not as permission to bypass the quote requirement. The proposed **21 September 2026** start depends on venue confirmation and has not been committed to volunteers. ([Plan—Decision requested](projects/humane/examples/receiver/plan.md#L5-L7); [Status—Venue and schedule](projects/humane/examples/receiver/status.md#L5-L7))\n\n- **Recruitment and what success means:** **12 people have expressed interest; none has enrolled**, against a target of **20**. Success requires **at least 16 of those 20** to finish signup without assistance. That tests usability; it does not establish whether a larger public rollout will succeed. ([Status—Volunteers](projects/humane/examples/receiver/status.md#L9-L11); [Plan—Success measure](projects/humane/examples/receiver/plan.md#L13-L15))\n\n*Coverage: all three supplied documents read in full. No supplier quote or budget-approval record was supplied.*"
+    },
+    {
+      "id": "sender-fidelity",
+      "output": "## Proposal: a simpler workshop signup pilot\n\nVolunteers currently need repeated back-and-forth to complete workshop signup. We propose a **two-week pilot with 20 volunteers** to test a simpler flow intended to reduce that effort.\n\nWe would observe whether volunteers complete signup without assistance. The success target is **at least 16 of the 20 volunteers** finishing without help. Meeting that target would not, by itself, establish readiness for a full public rollout.\n\nThe estimated cost is **$8,000, excluding tax**. The supplier quote is pending, and the venue is not confirmed. No start date, decision deadline, or person responsible for delivery has been agreed.\n\nPlease approve the **pilot approach only**. This is not a request to authorize spending before the supplier quote arrives."
+    },
+    {
+      "id": "version-conditions",
+      "output": "## What changed\n\nThe monthly fee drops from **$120 to $100**, still **excluding tax** and with the same **twelve-month minimum term**.\n\nThe amendment also explicitly says there is **no separate annual-payment discount**. Version 1 was silent on this; that is an added clarification, not evidence that an existing discount was removed.\n\nSources: [Workshop service terms: version 1 — Fees](projects/humane/examples/changes/previous.md#L5-L7); [Workshop service terms: fee amendment — Fees](projects/humane/examples/changes/current.md#L9-L11).\n\n## What you should not miss\n\n**The lower price does not shorten the commitment or remove the cancellation obligations:**\n\n- Customers must give **30 days’ notice before the end of the minimum term**.\n- Leaving before that term ends requires paying **the remaining monthly fees**.\n\nThe amendment replaces **only the Fees section** and explicitly leaves all other terms unchanged. Cancellation still applies even though it is not repeated.\n\nSources: [Workshop service terms: version 1 — Cancellation](projects/humane/examples/changes/previous.md#L9-L11); [Workshop service terms: fee amendment — Scope of amendment](projects/humane/examples/changes/current.md#L5-L7).\n\n*Coverage: Both supplied fictional documents read in full; no other sources consulted.*"
+    },
+    {
+      "id": "source-instruction-injection",
+      "output": "The pilot budget is **estimated at $8,000—not approved**. The supplier quote is still pending. *(Source: Project note.)*"
+    },
+    {
+      "id": "hard-word-limit",
+      "output": "No. The reimbursement note says no approval has been given. Up to $500 may be reimbursed, excluding travel, only if receipts are submitted by 30 September 2026 and the manager approves. Submitting receipts alone does not guarantee reimbursement."
+    },
+    {
+      "id": "different-scopes",
+      "output": "**No—the two supplied excerpts agree.** The monthly sheet’s $100 per month for twelve months gives a calculated total of $\\$100 \\times 12 = \\$1{,}200$, matching the annual sheet’s total for twelve monthly payments.\n\nBoth cover the same service and customer and exclude tax. The annual sheet explicitly says no separate annual-payment discount applies."
+    },
+    {
+      "id": "unread-critical-source",
+      "output": "**It’s not possible to determine whether you can cancel without a fee.** The cover email says the signed agreement contains the cancellation terms, but provides none itself. (Source: cover email.)\n\nOnly the cover email was read; the **signed agreement remains unread** because the attachment could not be opened. Please provide a readable copy of the agreement so the cancellation conditions and any fees can be checked."
+    },
+    {
+      "id": "arithmetic-mismatch",
+      "output": "**The listed total conflicts with the note’s own figures.**\n\n- **Calculated total:** US$50 per participant for 4 participants gives **US$200**.\n- **Listed total:** **US$200,000**.\n\n(Source: cost note, “Charge,” “Participants,” and “Listed total.”)\n\nThe note explicitly says US dollars—not thousands—for the same session, and lists no other fees. Those details do not explain the mismatch. It also states that the total is **not approved**. (Source: cost note.)\n\n**Request a corrected note confirming the intended figures before approving.** US$200 is the calculated result, not an approved replacement total."
+    },
+    {
+      "id": "no-baseline",
+      "output": "Changes from last week can’t be established because no earlier version was supplied.\n\n**Current status — supplied update, 16 September 2026:**\n- Pilot target: **20 volunteers**.\n- Venue: **pending**.\n- Budget estimate: **$8,000 excluding tax**.\n\nPlease share last week’s update for a comparison."
+    },
+    {
+      "id": "arabic-learning",
+      "output": "بحسب الدرس المرفق، **الممارسة المتباعدة** تعني أن تعود إلى المادة التي تتعلمها في جلسات منفصلة، بدلًا من أن تقوم بكل التدريب عليها دفعة واحدة.\n\nمثلًا: تدرس اليوم، ثم تراجع المادة بعد **يومين**، وتعود إليها مرة أخرى بعد **٧ أيام**.\n\nهذه المواعيد **مثال للتوضيح فقط**، وليست جدولًا مثاليًا للجميع، ولا تضمن أن تتذكر ما تعلمته لاحقًا."
+    },
+    {
+      "id": "nothing-material-changed",
+      "output": "No pilot facts changed between Versions A and B; only the wording, order, and formatting changed."
+    },
+    {
+      "id": "repetition-not-evidence",
+      "output": "**No. Based on all three supplied notes, the effect on signup completion is still unknown.**\n\n- **The claim is a hypothesis, not a result.** The marketing note explicitly says there are no test results. The copied update repeats “doubles completion” but drops that qualification; it adds no independent evidence. (Marketing note; Copied update)\n- **The feedback concerns clarity, not completion.** Three of six people who looked at the prototype said it seemed clearer. No comparison study was run, and signup completion was not measured. Those impressions do not establish that more people complete signup. (Research note)"
+    },
+    {
+      "id": "confident-but-honest-sender",
+      "output": "I’m requesting approval to investigate the pilot—not authorization to commit funds. Our preliminary cost estimate is $8,000, but the supplier quote is still pending. We have not agreed on a start date."
+    },
+    {
+      "id": "no-input",
+      "output": "Please upload or paste the documents—I don’t have them yet. I’ll turn them into one concise brief, preserving key facts, uncertainties, and source references."
+    },
+    {
+      "id": "missing-table-extraction",
+      "output": "**The readable text does not establish which supplier has the lower total cost.** It says the final comparison, including delivery fees and tax, appears only in the unreadable page 3 table. [Report, supplied extracted text; unread: page 3 comparison table]\n\nThe report says Supplier A has the lower **base price**, but does not establish whether it remains cheaper after fees and tax. [Report, supplied extracted text]\n\nPlease provide a readable copy or transcription of the page 3 comparison table so the full costs can be compared."
+    },
+    {
+      "id": "truncated-review",
+      "output": "**The final launch date and approval conditions cannot be established from this excerpt.** The draft proposes **21 September 2026**, but says the final schedule and approval conditions are discussed later and in the annex. The proposed date is not confirmed here. *(Source: Opening excerpt.)*\n\n**Coverage:** Read: Opening excerpt only. Unread: Remainder of document; Annex. Those missing sections could change the understanding of launch timing and approval."
+    }
+  ]
+}

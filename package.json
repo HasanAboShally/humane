@@ -1,0 +1,31 @@
+{
+  "name": "humane-maintainer-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Private maintainer checks for the Humane Markdown skill; not an npm package.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "prepare:eval": "node scripts/prepare-evaluation.mjs",
+    "pack:skill": "node scripts/package.mjs",
+    "test:install": "node scripts/check-install.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "dev:site": "npm run build:site && node scripts/serve-site.mjs",
+    "preview:site": "node scripts/serve-site.mjs",
+    "test:site": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "@playwright/test": "1.63.0",
+    "fflate": "0.8.3",
+    "fontkit": "2.0.4",
+    "lucide-static": "1.46.0",
+    "sharp": "0.35.4",
+    "yaml": "2.9.1"
+  }
+}

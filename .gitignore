@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+.tmp/
+*.log
+skills-lock.json
+.impeccable/review/
+test-results/
+playwright-report/
+.vscode/

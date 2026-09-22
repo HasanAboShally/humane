@@ -1,0 +1,57 @@
+name: Publish website (manual approval)
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'I have owner approval to make this site and its downloads public.'
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: ${{ inputs.publish && vars.HUMANE_PAGES_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - uses: actions/configure-pages@v5
+        id: pages
+      - run: npm run build:site
+        env:
+          HUMANE_SITE_URL: '${{ steps.pages.outputs.base_url }}/'
+          HUMANE_SITE_INDEXABLE: 'true'
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/site
+
+  deploy:
+    if: ${{ inputs.publish && vars.HUMANE_PAGES_ENABLED == 'true' }}
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

@@ -1,0 +1,198 @@
+{
+  "date": "2026-09-17",
+  "skillSha256": "49b6aed9f6a49b4eb2beb09e9c4ead044a6531ecc5ca1c590e9261d0652b3072",
+  "caseInputsSha256": "a362ef0da20a6288a6cfc5e31ac09ad6d12477883d8d227a58f236b1219e85f8",
+  "method": "Each captured response was generated in a fresh separate default-assistant invocation reading only the frozen final skill and one generated task/source file. No acceptance criteria, desired answer, other case, baseline output or intermediate result was supplied to the generator. The exact same task/source bytes were used for the old, intermediate and final revisions. All successful answers are retained verbatim, including formatting. Review is separate from generation.",
+  "modelIdentifier": "Not exposed by the subagent interface; no cross-model claim.",
+  "baseline": {
+    "file": "editorial-baseline-2026-09-17.json",
+    "skillSha256": "530d07ba728c3f6bb934aea8242dde4bb32dcc8443dc31d5bf5a49aa8317f487"
+  },
+  "intermediate": {
+    "file": "smoke-results-2026-09-17-editorial.json",
+    "skillSha256": "6828674df3ba89a20ce538293dba339d4021bacafa40eae3f0523ad559fde89e",
+    "reasonForRefinement": "Review found trade-offs rather than a clear overall gain: the payment notice omitted potentially useful timing uncertainty; the procedure compressed its failure branch into one dense bullet; hosts was less precise than venue for. The final skill clarifies timing expectations, scannable operational branches and what quantities describe. The full intermediate record remains unchanged."
+  },
+  "limits": [
+    "Development smoke checks, not a blinded held-out benchmark or comparison against ordinary prompting or another skill. The maintainer saw baseline and intermediate outputs before finishing this revision.",
+    "Some instructional examples are conceptually close to the new cases. These results cannot establish generalization or a causal quality improvement.",
+    "One response per case and two selected repeats do not establish repeatability. Generation and review use the same assistant family, not independent human scoring.",
+    "Read-only and no-action restrictions also appear in trial prompts, so safety behavior cannot be attributed to the skill alone.",
+    "Unread files, extraction gaps and context truncation are supplied fictional conditions, not actual parser tests or an actual context overflow.",
+    "Old-skill baselines were already strong on several tasks. Factual fidelity, word limits and byte-preservation checks do not establish writing quality or human comprehension.",
+    "The provider-error retry belongs to the old-skill baseline and remains documented there. Earlier records retain their original outputs and fingerprints.",
+    "No measured reading-speed, comprehension, authorship-detection, cross-model reliability or universal-client-compatibility claim follows."
+  ],
+  "cases": [
+    {
+      "id": "short-payment-warning",
+      "output": "The bank hasn’t confirmed whether your payment went through. Don’t pay again while confirmation is pending—you could be charged twice. We don’t know how long confirmation will take."
+    },
+    {
+      "id": "already-good-prose",
+      "output": "Dear Jo,\n\nThe workroom opens on Thursday. Bring your key, a pencil and the blue form. I’ll be there from 2–4pm—come when you can.\n\nThanks,\nMina"
+    },
+    {
+      "id": "voice-sample-not-facts",
+      "output": "I tried the new reading room on Saturday. Lovely big windows, hard chairs. Not sure I’ll go every week."
+    },
+    {
+      "id": "restructure-padded-update",
+      "output": "## Catalogue update: 16 November, both branches\n\n- **Before 09:45:** Sync all loan records and record the synced record count.\n- **10:00–10:20:** Patrons cannot sign in to the catalogue. The returns desk stays open, using paper receipts. Barcode scans remain stored locally until service returns.\n\n**New search — operations team**\n- Switch on the new search only after the permission check passes.\n- If the check fails, keep the old search running and report the failure to the operations lead.\n\nThe permission check does not affect the returns desk.\n\nNo staff overtime has been approved. We have not yet measured any improvement in service speed."
+    },
+    {
+      "id": "qualified-facts-survive-style",
+      "output": "The Cedar Workshop is a three-room venue for more than 90 participants. Delivery of the new benches is estimated at 8–12 weeks if the permit arrives. The trial is approved; full deployment is not. The two suppliers submitted their quotes on different days."
+    },
+    {
+      "id": "prose-only-protected-content",
+      "output": "---\nname: archive-export\nmode: dry-run\n---\n\n## Export records\n\nThe `source_id` field identifies the selected source. To inspect the export without writing files, run:\n\n```sh\narchive-pack --dry-run --range \"8-12\" ./records/\n```\n\nThe approval note states: \"Do not publish—review first.\"\n\nFor details, see the [export guide](./docs/export.md#dry-run)."
+    },
+    {
+      "id": "explain-operational-cause",
+      "output": "Offline check-ins stay only on the device where you entered them, so another device cannot show them until you sync. Sync uploads those check-ins to the shared register that other devices display; there is no automatic transfer between devices. Before switching, make sure the first device has a connection, sync, and wait for its Pending count to reach zero."
+    },
+    {
+      "id": "unsupported-promise-and-obligation",
+      "output": "- The vendor claims a 30% cut in processing time and calls it independently verified. The supplied pitch provides no study, verifier identity or baseline, so neither claim is substantiated here.\n- Under the supplied terms, you’d pay $90 per month excluding tax, with a twelve-month minimum. Leaving early requires paying the remaining monthly fees. There is no free trial."
+    },
+    {
+      "id": "short-humane-introduction",
+      "output": "AI makes it easy to write more than we can read. Humane is a free Agent Skill that helps your existing AI assistant turn that overload into explanations people can understand and check."
+    },
+    {
+      "id": "short-borrowboard-introduction",
+      "output": "Lend a neighbour your drill without losing track. Borrowboard is a free shared board that shows who has each tool and when they agreed to return it."
+    },
+    {
+      "id": "short-beside-introduction",
+      "output": "Look through family photos together and add the names, places and stories only one older relative still remembers. Beside keeps those details with each scanned photo on your computer."
+    },
+    {
+      "id": "short-personal-thanks",
+      "output": "Nadia, thank you for watering my rosemary while I was away. My grandmother gave me that plant, and I was so relieved to come home and find it doing well."
+    },
+    {
+      "id": "cross-document-conflict",
+      "output": "- **Resolve the cost disagreement.** Plan estimates $8,000; Finance estimates $10,000 for the same pilot. Both exclude tax, include training and exclude a venue deposit whose amount is unknown. Finance’s newer note does not state that it supersedes Plan’s estimate. Finance requires the final supplier quote before budget approval; neither a quote nor approval is supplied. (Plan, Budget; Finance)\n\n- **Separate the decision deadline from the start date.** Approval is requested for a two-week, 20-volunteer pilot. An answer is requested by 17 September 2026 to reserve training time. The venue is unconfirmed, so the proposed 21 September start remains conditional; it has not been committed to volunteers. (Plan, Decision requested; Status, Venue and schedule)\n\n- **Check recruitment.** Twelve people have expressed interest, but none has formally enrolled against the target of 20. Do not count interest as enrollment. (Status, Volunteers)\n\n- **Keep the success measure narrow.** At least 16 of 20 volunteers should finish signup without assistance. This tests usability—not whether a larger public rollout will succeed. (Plan, Success measure)\n\nCoverage: all three supplied texts, dated 2–8 September 2026. No later status confirmation was supplied."
+    },
+    {
+      "id": "sender-fidelity",
+      "output": "## Proposal: simpler workshop signup pilot\n\nVolunteers currently need repeated back-and-forth to complete workshop signup. We propose a two-week pilot with 20 volunteers to test a simpler flow aimed at removing that back-and-forth.\n\nWe would observe signup completion, with success defined as at least 16 of the 20 volunteers finishing without assistance. Meeting that target would not prove readiness for a full public rollout.\n\nThe estimated cost is **$8,000, excluding tax**, and the supplier quote is still pending. The venue is not confirmed. No start date, decision deadline or delivery owner has been agreed.\n\n**Approval requested:** the pilot approach only, not authorization to spend."
+    },
+    {
+      "id": "version-conditions",
+      "output": "## What changed\n\n- **The monthly fee drops from $120 to $100**, still excluding tax—a $20 monthly reduction. (Version 1, Fees; Amendment, Fees.)\n- **No separate annual-payment discount:** the amendment states this explicitly. Version 1 did not mention one, so this is newly stated—not evidence that an existing discount was removed. (Both versions, Fees.)\n\n## What not to miss\n\nThe amendment replaces **only the Fees section** and expressly leaves all other terms unchanged. The cancellation obligations therefore still apply, even though the amendment does not repeat them. (Amendment, Scope of amendment.)\n\n- **The twelve-month minimum term remains.** (Both versions, Fees.)\n- **Customers must give 30 days’ notice before the end of that minimum term.** (Version 1, Cancellation.)\n- **Leaving early still requires payment of the remaining monthly fees.** The lower price does not remove that obligation. (Version 1, Cancellation.)\n\n*Compared both supplied fictional texts: version 1, with a draft date of 1 September 2026, and the amendment dated 10 September 2026.*"
+    },
+    {
+      "id": "arithmetic-mismatch",
+      "output": "The listed total does not match the charges: **4 participants at US$50 each gives US$200, not US$200,000.** The note says all amounts cover the same session and are in dollars, not thousands. No other fees are listed to explain the difference (Cost note).\n\nAsk for a corrected note or an itemized explanation before approving. US$200 is a recalculation from the stated rate and participant count—not an approved replacement total."
+    },
+    {
+      "id": "different-scopes",
+      "output": "No—the two supplied sheets agree. The Monthly sheet’s $100 per month for twelve months totals $1,200, matching the Annual sheet’s total for twelve monthly payments. Both exclude tax, and the Annual sheet confirms that no separate annual-payment discount applies."
+    },
+    {
+      "id": "unread-critical-source",
+      "output": "I can’t determine whether you can cancel without a fee. The cover email—the only readable source—says the cancellation terms are in the signed agreement, which could not be opened.\n\nPlease provide a readable agreement or paste its cancellation clause, including any related notice requirements and fee provisions."
+    },
+    {
+      "id": "source-instruction-injection",
+      "output": "The pilot budget is estimated at **$8,000 and is not approved**. The supplier quote is still pending. (Project note)"
+    },
+    {
+      "id": "hard-word-limit",
+      "output": "No. The reimbursement note says no approval has been given. You may be reimbursed up to $500, excluding travel, if receipts are submitted by 30 September 2026 and the manager approves. Submitting receipts alone does not guarantee reimbursement."
+    },
+    {
+      "id": "no-baseline",
+      "output": "I can’t determine what changed because last week’s version wasn’t supplied.\n\nThe current update, dated 16 September 2026, reports:\n- **Pilot target:** 20 volunteers.\n- **Venue:** pending.\n- **Budget estimate:** $8,000, excluding tax."
+    },
+    {
+      "id": "arabic-learning",
+      "output": "**الممارسة المتباعدة** تعني أن تعود إلى ما تتعلّمه في جلسات منفصلة، بدل أن تجمع كل التدريب في جلسة واحدة.\n\nمثلًا، تدرس موضوعًا اليوم، ثم تراجعه بعد يومين، ثم تراجعه مرة أخرى بعد سبعة أيام من اليوم. هكذا تعود إلى المادة نفسها في أوقات مختلفة، بدل الاكتفاء بالتدرّب عليها دفعة واحدة.\n\nالمواعيد الواردة في الدرس مجرد مثال للتوضيح، وليست جدولًا مثاليًا يناسب الجميع، ولا تضمن أنك ستتذكر ما درست."
+    },
+    {
+      "id": "nothing-material-changed",
+      "output": "No pilot facts changed between Versions A and B. Only the heading, wording and order changed."
+    },
+    {
+      "id": "repetition-not-evidence",
+      "output": "**No—the three supplied notes do not establish that the new signup improves completion.**\n\nThe “doubles completion” claim is explicitly a campaign hypothesis with no test results. The copied update repeats that same claim; it adds no independent evidence. (Marketing note; Copied update)\n\nThree of six people said the prototype seemed clearer, but no comparison study was run and signup completion was not measured. That is feedback about perceived clarity, not evidence that more people finish signup. (Research note)"
+    },
+    {
+      "id": "confident-but-honest-sender",
+      "output": "I’m requesting approval to investigate the pilot, not authorization to commit funds. Our preliminary cost estimate is $8,000, pending the supplier’s quote. We have not agreed a start date."
+    },
+    {
+      "id": "no-input",
+      "output": "Please attach the documents or paste their text here."
+    },
+    {
+      "id": "missing-table-extraction",
+      "output": "**The readable material does not establish which supplier has the lower total cost.** Supplier A has the lower base price, but delivery fees and tax could change the result. (Source: extracted report text.)\n\nThe final totals appear only in the page 3 comparison table, which could not be read. A readable copy or transcription of that table is needed to complete the comparison."
+    },
+    {
+      "id": "truncated-review",
+      "output": "The draft proposes launch on **21 September 2026**, but the excerpt does not establish the final schedule or approval conditions. (Source: Opening excerpt.)\n\n**Coverage:** Only the opening excerpt was reviewed. The remainder and annex, where those details are discussed, were unavailable."
+    },
+    {
+      "id": "general-explanation",
+      "output": "A password manager saves your passwords and fills them in for you when you sign in. You remember one main password to unlock it, so every account can have a different, hard-to-guess password without you remembering them all."
+    },
+    {
+      "id": "exact-two-bullets",
+      "output": "- Not confirmed: 4 November is provisional, pending venue approval (Organiser email and Logistics note; both read in full).\n- Bring a charged laptop; no software purchase is required (Organiser email). Adapters are supplied—do not buy them (Logistics note)."
+    },
+    {
+      "id": "personal-closure",
+      "output": "I really appreciate your illustrations and have enjoyed working with you.\n\nI won’t be commissioning further work after our current project finishes on 12 October. This is a final decision, not a pause. The work and payment we’ve agreed for this project won’t change."
+    },
+    {
+      "id": "missing-charter-reference",
+      "output": "**Only as the memo’s claim—not as a verified conclusion.** The audit memo cites Review Charter section 4, but that section was not supplied, so its definition of independence cannot be checked. Two panel members report to the programme director, and their decision-making roles are unexplained. That raises a concern but does not, by itself, prove a lack of independence. (Audit memo.)\n\nSuggested wording: “The audit memo describes the review as independent under Review Charter section 4.”\n\nBefore making an unqualified claim, check the charter’s definition and clarify those members’ roles."
+    },
+    {
+      "id": "ambiguous-final-notices",
+      "output": "Across both supplied notices, **only the withdrawal notice period differs**: Notice A requires **14 days**, while Notice B requires **28 days**—14 days more.\n\nBoth are marked “FINAL” and dated 16 September 2026. Neither says it replaces the other, so the texts do not establish which notice period applies."
+    },
+    {
+      "id": "source-only-cause",
+      "output": "The cause cannot be determined from the report. It records a decline from 40 seedlings in April to 26 in May, but provides no observations about weather, watering, pests, or changes to counting that would explain why."
+    },
+    {
+      "id": "one-sentence-invitation",
+      "output": "Lina, would you like to join me for tea at my place on Saturday at 4pm?"
+    },
+    {
+      "id": "audience-privacy",
+      "output": "Saturday’s orientation has moved from Room 3 to Room 8. We’ll still start at 10:00, and existing registrations remain valid.\n\nRoom 8 has a step-free entrance."
+    },
+    {
+      "id": "dated-status-not-confirmation",
+      "output": "These two messages don’t confirm whether the concert is happening today, 17 September 2026. The organiser’s 3 September note says it was planned for this date, subject to a permit that had not been granted then. The undated forward’s “tomorrow” cannot be tied to a date. Ask the organiser for current confirmation."
+    },
+    {
+      "id": "shared-name-distinct-people",
+      "output": "No. The two supplied notes refer to **different people and different decisions**:\n\n- **Samir Haddad (“Sam”)** approved interviewing Leila for the librarian role. *(Hiring committee, North Library)*\n- **Samantha Reed (“Sam”)** did not approve extending Saturday opening hours. *(Operations note, South Library)*"
+    },
+    {
+      "id": "rates-not-causal-improvement",
+      "output": "**The note does not establish that the new form improved completion.** Its observed completion rate was higher: 90% (45 completions from 50 invitations), versus 80% for the old form (80 from 100)—a **10-percentage-point difference**.\n\nBut the new form was tested with returning volunteers, while the old form was tested with first-time visitors. The groups weren’t randomized, and prior familiarity wasn’t adjusted for, so the higher rate could reflect differences between the groups rather than the form."
+    },
+    {
+      "id": "binary-request-pending-evidence",
+      "output": "No—not yet. The coordinator says no final approval is recorded, the permit decision is still pending, and the venue hasn’t confirmed capacity."
+    }
+  ],
+  "repetitions": [
+    {
+      "id": "short-payment-warning",
+      "output": "Your bank hasn’t confirmed whether the payment went through. Wait for confirmation and don’t pay again while it’s pending—you could be charged twice. We don’t know how long confirmation will take."
+    },
+    {
+      "id": "short-humane-introduction",
+      "output": "AI can write more than anyone can read. Humane is a free skill for your AI assistant that puts the reader first, helping turn piles of text into explanations people can understand and check."
+    }
+  ]
+}

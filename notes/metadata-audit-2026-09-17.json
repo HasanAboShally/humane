@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-17",
+  "changeType": "description-only",
+  "skillSha256": "e8576434acd0b980473aeda7f0f255faa335a3a08d89a2f8a302d88eb214ea53",
+  "bodySha256": "1ea57e8ec539e14f78e8a6125e4396b16dd1ce7b027f7824840e2d16c96e863c",
+  "evaluatedSkillSha256": "49b6aed9f6a49b4eb2beb09e9c4ead044a6531ecc5ca1c590e9261d0652b3072",
+  "evaluatedFrontmatter": "---\nname: humane\ndescription: \"Make content easier for people to understand and check. Use when asked to use Humane, make something humane, synthesize or explain documents, compare versions, prepare reader-friendly drafts, tighten wordy text, rewrite stiff prose, or preserve a writer's voice. Lead with what matters to this reader, improve structure and naturalness, and keep important facts, caveats and source references intact. Not an AI detector or a substitute for expert review.\"\n---\n",
+  "behaviorEvidence": "smoke-results-2026-09-17-editorial-final.json",
+  "method": "Only the YAML description changed. The current Markdown body was compared byte-for-byte with commit 2831ce3. Reconstructing the old full document from the exact old frontmatter and current body reproduces the existing behavioral record's full-file SHA-256. Tests retain that check rather than relabeling old responses as fresh trials.",
+  "limits": [
+    "No new model-output trials were run for this metadata-only revision. The forty-case behavioral record and two repeats remain evidence for their original full-file fingerprint.",
+    "An unchanged body does not prove that changed discovery metadata has no effect on selection or output. Native automatic triggering across clients and models was not tested.",
+    "The official reference validator checks format, metadata and naming; it does not certify editorial quality, human comprehension, or every host's behavior."
+  ],
+  "referenceValidator": {
+    "repository": "https://github.com/agentskills/agentskills",
+    "revision": "69ef37e9424c0a7ea9dd2293b559e43ec8176379",
+    "package": "skills-ref",
+    "version": "0.1.0",
+    "result": "Valid skill",
+    "environment": "Isolated uv tool environment; no project dependency or user-level skill installation."
+  }
+}

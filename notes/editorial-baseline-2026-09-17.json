@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-17",
+  "skillSha256": "530d07ba728c3f6bb934aea8242dde4bb32dcc8443dc31d5bf5a49aa8317f487",
+  "caseInputsSha256": "a362ef0da20a6288a6cfc5e31ac09ad6d12477883d8d227a58f236b1219e85f8",
+  "method": "Nine selected cases and two repeats, each in a separate default-assistant invocation. Each generator read only the old skill snapshot and its generated task/source file, not acceptance criteria, desired answers, other cases or existing outputs. The snapshot and all forty task inputs were prepared before the canonical skill edit. One introduction invocation returned an upstream high-demand error instead of an answer; it was retried using the same frozen old skill and input after the canonical edit. No captured answer was corrected or discarded.",
+  "modelIdentifier": "Not exposed by the subagent interface; no cross-model claim.",
+  "limits": [
+    "A small before/after comparison with one or two responses per task is not a reliable ranking, causal effectiveness study or human-reader test.",
+    "Read-only/no-action restrictions were present in trial prompts as well as the skill, so safe behavior cannot be attributed to the skill alone.",
+    "The maintainer saw the baseline answers and acceptance criteria before finishing the revision. These are development cases, not a blinded held-out test.",
+    "The unchanged skill already performed well on most selected tasks. A stronger written method does not itself prove better model outputs."
+  ],
+  "generationErrors": [
+    {
+      "id": "short-humane-introduction",
+      "error": "Agent error: Sorry, the upstream model provider is currently experiencing high demand. Please try again in a moment or consider switching to Auto. [Learn More](https://aka.ms/github-copilot-rate-limit-error)",
+      "resolution": "Retried the same frozen skill and task inputs in a fresh invocation. The successful result is retained in repetitions. The error is not treated as a writing result."
+    }
+  ],
+  "cases": [
+    {
+      "id": "short-payment-warning",
+      "output": "Your bank hasn’t confirmed the payment yet. Please wait for confirmation. Don’t pay again while it’s pending—you could be charged twice. We don’t know how long confirmation will take."
+    },
+    {
+      "id": "already-good-prose",
+      "output": "Dear Jo,\n\nThe workroom opens on Thursday. Bring your key, a pencil and the blue form. I’ll be there from 2–4pm—come when you can.\n\nThanks,\nMina"
+    },
+    {
+      "id": "voice-sample-not-facts",
+      "output": "I tried the new reading room on Saturday. Lovely big windows. Hard chairs. Not sure I’ll go every week."
+    },
+    {
+      "id": "restructure-padded-update",
+      "output": "## Catalogue change: 16 November — both branches\n\n**Before 09:45**\n- Sync all loan records and record the synced record count.\n\n**10:00–10:20**\n- Patrons cannot sign in to the catalogue.\n- The returns desk stays open, using paper receipts. Barcode scans remain stored locally until service returns.\n\n**New search**\n- The operations team may switch it on **only after the permission check passes**.\n- If the check fails, keep the old search running and report the failure to the operations lead.\n- The permission check does not affect the returns desk.\n\nNo staff overtime has been approved. No improvement to service speed has been measured yet."
+    },
+    {
+      "id": "qualified-facts-survive-style",
+      "output": "The Cedar Workshop is a three-room venue for more than 90 participants. Delivery of the new benches is estimated at 8–12 weeks if the permit arrives. The trial is approved; full deployment is not approved. The two suppliers submitted their quotes on different days."
+    },
+    {
+      "id": "prose-only-protected-content",
+      "output": "````markdown\n---\nname: archive-export\nmode: dry-run\n---\n\n## Export records\n\nThe `source_id` field identifies the selected source. To inspect the export without writing files, run:\n\n```sh\narchive-pack --dry-run --range \"8-12\" ./records/\n```\n\nThe approval note states: \"Do not publish—review first.\"\n\nFor details, see the [export guide](./docs/export.md#dry-run).\n````"
+    },
+    {
+      "id": "explain-operational-cause",
+      "output": "Offline check-ins are saved only on the device you used, and they do not transfer automatically to another device. Syncing requires a connection and uploads those check-ins to the shared register, which is what another device shows. Before switching, sync on the first device and wait for its Pending count to reach zero."
+    },
+    {
+      "id": "unsupported-promise-and-obligation",
+      "output": "- The vendor claims a 30% processing-time reduction and independent verification, but supplies no study, verifier identity or baseline. The supplied material does not substantiate either claim. (Vendor pitch)\n- You’d commit to $90 per month excluding tax, with a twelve-month minimum. Leaving early requires paying the remaining monthly fees. There is no free trial. (Terms)"
+    },
+    {
+      "id": "short-humane-introduction",
+      "output": "AI makes it easy to write more than people can read. Humane is a free Agent Skill for your AI assistant that helps turn all that text into explanations people can understand and check."
+    }
+  ],
+  "repetitions": [
+    {
+      "id": "short-payment-warning",
+      "output": "Your bank hasn’t confirmed whether this payment went through. Don’t pay again while confirmation is pending—you could be charged twice. There’s no estimated confirmation time yet."
+    },
+    {
+      "id": "short-humane-introduction",
+      "output": "AI makes it easy to write more than we can read. Humane is a free agent skill for your AI assistant that helps turn that text into explanations people can understand and check."
+    }
+  ]
+}
